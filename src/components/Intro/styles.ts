@@ -78,3 +78,16 @@ export const EpisodeTitle = styled.h2`
   transform: scale(1, 1.5);
   text-align: center;
 `;
+
+export const Volume = styled.button`
+  background: transparent;
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  z-index: 50;
+
+  img {
+    height: 2.4rem;
+  }
+`;
