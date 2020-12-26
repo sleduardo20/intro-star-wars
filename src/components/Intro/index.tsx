@@ -17,7 +17,9 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
 
   return (
     <S.Container>
-      <S.Intro ref={intro}>{text}</S.Intro>
+      <S.Intro ref={intro}>
+        <p>{text}</p>
+      </S.Intro>
     </S.Container>
   );
 };
