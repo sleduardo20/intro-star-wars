@@ -1,7 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 
 import logo from '../../assets/img/logo.svg';
+import volumeOff from '../../assets/img/volume_off.svg';
+import volumeOn from '../../assets/img/volume_on.svg';
+
 import * as S from './styles';
 
 interface IntroPros {
@@ -9,8 +12,12 @@ interface IntroPros {
 }
 
 const Intro: React.FC<IntroPros> = ({ text }) => {
+  const [muted, setMuted] = useState(true);
+
   const intro = useRef(null);
   const title = useRef(null);
+  const content = useRef(null);
+  const audio = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -23,7 +30,8 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
       .to(intro.current, { opacity: 0, duration: 1.5 })
       .set(title.current, { opacity: 1, scale: 2.75 })
       .to(title.current, { scale: 0.85, ease: 'power2', duration: 8 })
-      .to(title.current, { opacity: 0, duration: 1.5 }, '-=1.5');
+      .to(title.current, { opacity: 0, duration: 1.5 }, '-=1.5')
+      .to(content.current, { top: '-170%', duration: 50 });
   }, []);
 
   return (
@@ -35,7 +43,7 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
         <img src={logo} alt="Code Wars title" />
       </S.Title>
       <S.Crawl>
-        <S.CrawlContent>
+        <S.CrawlContent ref={content}>
           <S.EpisodeNumber>Episode X</S.EpisodeNumber>
           <S.EpisodeTitle>The App Eduardo</S.EpisodeTitle>
           <p>
@@ -55,6 +63,20 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
           </p>
         </S.CrawlContent>
       </S.Crawl>
+
+      <audio ref={audio} muted>
+        <source
+          type="audio/mpeg"
+          src="https://ia803103.us.archive.org/31/items/StarWars_20180709/Star%20Wars.mp3"
+        />
+      </audio>
+      <S.Volume>
+        {muted ? (
+          <img src={volumeOff} alt="Volume is Off" />
+        ) : (
+          <img src={volumeOn} alt="Volume is ON" />
+        )}
+      </S.Volume>
     </S.Container>
   );
 };
