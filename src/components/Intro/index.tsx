@@ -25,7 +25,7 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
     tl.to(intro.current, {
       opacity: 1,
       delay: 0.7,
-      duration: 4.5,
+      duration: 3,
     })
       .to(intro.current, {
         opacity: 0,
@@ -34,10 +34,19 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
           audio.current?.play();
         },
       })
-      .set(title.current, { opacity: 1, scale: 2.75 })
-      .to(title.current, { scale: 0.85, ease: 'power2', duration: 8 })
+      .from(title.current, {
+        opacity: 0,
+        scale: 2.75,
+        duration: 3.5,
+      })
+      .to(title.current, {
+        opacity: 1,
+        scale: 0.05,
+        ease: 'power2',
+        duration: 5,
+      })
       .to(title.current, { opacity: 0, duration: 1.5 }, '-=1.5')
-      .to(content.current, { top: '-170%', duration: 50 });
+      .to(content.current, { top: '-170%', delay: 0.5, duration: 50 });
   }, []);
 
   return (
@@ -70,11 +79,12 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
         </S.CrawlContent>
       </S.Crawl>
 
-      <audio
-        src="https://ia803103.us.archive.org/31/items/StarWars_20180709/Star%20Wars.mp3"
-        ref={audio}
-        muted
-      />
+      <audio ref={audio} muted>
+        <source
+          src="https://ia803103.us.archive.org/31/items/StarWars_20180709/Star%20Wars.mp3"
+          type="audio/mp3"
+        />
+      </audio>
       <S.Volume
         onClick={() => {
           setMuted(state => !state);

@@ -35,10 +35,12 @@ export const Intro = styled.section`
 `;
 
 export const Title = styled(Intro)`
-  width: 18rem;
+  width: 16rem;
   align-items: center;
   display: flex;
   justify-content: center;
+  position: absolute;
+  top: 30%;
 `;
 
 export const Crawl = styled.section`
