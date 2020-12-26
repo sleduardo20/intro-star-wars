@@ -18,3 +18,15 @@ export const Intro = styled.section`
     font-size: 1.25rem;
   }
 `;
+
+export const Title = styled(Intro)`
+  width: 18rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+`;
+
+export const Crawl = styled.div``;
+export const CrawlContent = styled.div``;
+export const EpisodeNumber = styled.div``;
+export const EpisodeTitle = styled.div``;

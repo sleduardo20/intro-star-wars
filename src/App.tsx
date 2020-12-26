@@ -1,11 +1,13 @@
 import React from 'react';
 import GlobalStyles from './styles/GlobalStyles';
 
+import Intro from './components/Intro';
+
 const App: React.FC = () => {
   return (
     <>
       <GlobalStyles />
-      <h1>wolrd hold on</h1>
+      <Intro text="A long time ago, in a galaxy far, far away..." />
     </>
   );
 };
