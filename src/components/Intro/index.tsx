@@ -46,7 +46,12 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
         duration: 5,
       })
       .to(title.current, { opacity: 0, duration: 1.5 }, '-=1.5')
-      .to(content.current, { top: '-170%', delay: 0.5, duration: 50 });
+      .to(content.current, {
+        top: '-200%',
+        delay: 0.5,
+        opacity: 0,
+        duration: 50,
+      });
   }, []);
 
   return (
