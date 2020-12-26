@@ -17,7 +17,7 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
   const intro = useRef(null);
   const title = useRef(null);
   const content = useRef(null);
-  const audio = useRef(null);
+  const audio = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -27,7 +27,13 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
       delay: 0.7,
       duration: 4.5,
     })
-      .to(intro.current, { opacity: 0, duration: 1.5 })
+      .to(intro.current, {
+        opacity: 0,
+        duration: 1.5,
+        onComplete: () => {
+          audio.current?.play();
+        },
+      })
       .set(title.current, { opacity: 1, scale: 2.75 })
       .to(title.current, { scale: 0.85, ease: 'power2', duration: 8 })
       .to(title.current, { opacity: 0, duration: 1.5 }, '-=1.5')
@@ -64,13 +70,16 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
         </S.CrawlContent>
       </S.Crawl>
 
-      <audio ref={audio} muted>
-        <source
-          type="audio/mpeg"
-          src="https://ia803103.us.archive.org/31/items/StarWars_20180709/Star%20Wars.mp3"
-        />
-      </audio>
-      <S.Volume>
+      <audio
+        src="https://ia803103.us.archive.org/31/items/StarWars_20180709/Star%20Wars.mp3"
+        ref={audio}
+        muted
+      />
+      <S.Volume
+        onClick={() => {
+          setMuted(state => !state);
+        }}
+      >
         {muted ? (
           <img src={volumeOff} alt="Volume is Off" />
         ) : (

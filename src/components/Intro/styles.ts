@@ -81,13 +81,14 @@ export const EpisodeTitle = styled.h2`
 
 export const Volume = styled.button`
   background: transparent;
+  outline: none;
   border: 0;
   position: absolute;
-  top: 0;
-  left: 10px;
+  top: 2.8rem;
+  left: 1.8rem;
   z-index: 50;
 
   img {
-    height: 2.4rem;
+    height: 2rem;
   }
 `;
