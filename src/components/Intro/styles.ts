@@ -21,6 +21,26 @@ export const Container = styled.div`
   }
 `;
 
+export const Star = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background: red; */
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 100px 122px #ffff, 500px 756px #ffff;
+    z-index: 6;
+  }
+`;
+
 export const Intro = styled.section`
   position: absolute;
   top: 50%;
@@ -41,6 +61,7 @@ export const Title = styled(Intro)`
   justify-content: center;
   position: absolute;
   top: 30%;
+  z-index: 10;
 `;
 
 export const Crawl = styled.section`
@@ -57,6 +78,7 @@ export const Crawl = styled.section`
 export const CrawlContent = styled.div`
   position: absolute;
   top: 100%;
+  z-index: 10;
 
   p {
     font-weight: 700;

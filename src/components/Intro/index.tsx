@@ -40,17 +40,17 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
         duration: 3.5,
       })
       .to(title.current, {
-        opacity: 1,
+        delay: 0.5,
         scale: 0.05,
         ease: 'power2',
-        duration: 5,
+        duration: 1.5,
       })
       .to(title.current, { opacity: 0, duration: 1.5 }, '-=1.5')
       .to(content.current, {
-        top: '-200%',
+        top: '-170%',
         delay: 0.5,
         opacity: 0,
-        duration: 50,
+        duration: 150,
       });
   }, []);
 
@@ -101,6 +101,7 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
           <img src={volumeOn} alt="Volume is ON" />
         )}
       </S.Volume>
+      <S.Star />
     </S.Container>
   );
 };
