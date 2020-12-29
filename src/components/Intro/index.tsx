@@ -14,19 +14,34 @@ interface IntroPros {
 const Intro: React.FC<IntroPros> = ({ text }) => {
   const [muted, setMuted] = useState(true);
 
+  const loading = useRef(null);
   const intro = useRef(null);
   const title = useRef(null);
   const content = useRef(null);
   const audio = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
-    const tl = gsap.timeline();
+    const timeline = gsap.timeline();
 
-    tl.to(intro.current, {
-      opacity: 1,
-      delay: 0.7,
-      duration: 3,
-    })
+    timeline
+      .from(loading.current, {
+        opacity: 1,
+        duration: 1.5,
+      })
+      .to(loading.current, {
+        opacity: 0,
+        delay: 0.7,
+        duration: 1,
+      })
+      .from(intro.current, {
+        opacity: 0,
+        delay: 0.7,
+        duration: 3,
+      })
+      .to(intro.current, {
+        opacity: 1,
+        duration: 1.5,
+      })
       .to(intro.current, {
         opacity: 0,
         duration: 1.5,
@@ -56,6 +71,9 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
 
   return (
     <S.Container>
+      <S.Intro ref={loading}>
+        <p>Loading...</p>
+      </S.Intro>
       <S.Intro ref={intro}>
         <p>{text}</p>
       </S.Intro>

@@ -25,7 +25,6 @@ export const Star = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  /* background: red; */
 
   &::after {
     content: ' ';
@@ -36,7 +35,7 @@ export const Star = styled.div`
     width: 2px;
     height: 2px;
     background: transparent;
-    box-shadow: 100px 122px #ffff, 500px 756px #ffff;
+    box-shadow: 100px 122px #ffff, 300px 756px #ffff;
     z-index: 6;
   }
 `;
