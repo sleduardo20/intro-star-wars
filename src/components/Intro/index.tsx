@@ -1,9 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 import logo from '../../assets/img/logo.svg';
-import volumeOff from '../../assets/img/volume_off.svg';
-import volumeOn from '../../assets/img/volume_on.svg';
 
 import * as S from './styles';
 
