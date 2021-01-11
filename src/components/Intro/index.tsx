@@ -12,13 +12,10 @@ interface IntroPros {
 }
 
 const Intro: React.FC<IntroPros> = ({ text }) => {
-  const [muted, setMuted] = useState(true);
-
   const loading = useRef(null);
   const intro = useRef(null);
   const title = useRef(null);
   const content = useRef(null);
-  const audio = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     const timeline = gsap.timeline();
@@ -45,9 +42,6 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
       .to(intro.current, {
         opacity: 0,
         duration: 1.5,
-        onComplete: () => {
-          audio.current?.play();
-        },
       })
       .from(title.current, {
         opacity: 0,
@@ -65,14 +59,14 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
         top: '-170%',
         delay: 0.5,
         opacity: 0,
-        duration: 150,
+        duration: 200,
       });
   }, []);
 
   return (
     <S.Container>
       <S.Intro ref={loading}>
-        <p>Loading...</p>
+        <p>Carregando...</p>
       </S.Intro>
       <S.Intro ref={intro}>
         <p>{text}</p>
@@ -82,43 +76,39 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
       </S.Title>
       <S.Crawl>
         <S.CrawlContent ref={content}>
-          <S.EpisodeNumber>Episode X</S.EpisodeNumber>
-          <S.EpisodeTitle>The App Eduardo</S.EpisodeTitle>
+          <S.EpisodeNumber>Episódio I</S.EpisodeNumber>
+          <S.EpisodeTitle>Uma Nova Jornada</S.EpisodeTitle>
           <p>
-            The Development Team Lead has vanished. In her absence, the sinister
-            FUNCTIONAL BUG has risen from the ashes of the CI Tool and will not
-            rest until the last developer has been destroyed.
+            Durante oito anos no planeta Rad Informática, o analista de sistemas
+            teve muitas consquistas pessoais e profissionais, foram muitos
+            desafios, e a meta superada a sua patente e reconhecimento na equipe
+            crescia em rítmo acelerado.
           </p>
           <p>
-            With the support of the QA TEAM, the Software Developer leads a
-            brave RESISTANCE. He is desperate to find his Lead and gain her help
-            in restoring peace and justice to the repository.
+            Foi analista de suporte, analista de implantação, homologador, e
+            estava atuando como desenvolvedor de relatórios gerencias, seu
+            desejo por conhecimento e aperfeiçoamento estava aumentando a cada
+            dia.
           </p>
           <p>
-            The Developer has sent his most daring editor theme on a secret
-            mission to the production branch, where an old ally has discovered a
-            clue to the Lead’s whereabouts....
+            Mas o destino fez a vida do desenvolvedor mudar de direção, no ano
+            de 2019 ele e sua família resolveram partir para outro universo em
+            busca de novas descorbertas, procurando por culturas diferentes em
+            outros planetas.
+          </p>
+          <p>
+            Com o objetivo de realocar nesses planetas o desenvolvedor resolveu
+            aprender uma nova linguagem o JavaScript, e descobriu algo incrível.
+          </p>
+          <p>
+            Nasce uma paixão por desenvolvimento de interfaces, agora ele estuda
+            tudo sobre essa área. E nessa nova jornada o analista agora
+            desenvolvedor de relatórios, busca uma oportunidade de começar uma
+            nova carreia como Desenvolvedor Front-End.
           </p>
         </S.CrawlContent>
       </S.Crawl>
 
-      <audio ref={audio} muted>
-        <source
-          src="https://ia803103.us.archive.org/31/items/StarWars_20180709/Star%20Wars.mp3"
-          type="audio/mp3"
-        />
-      </audio>
-      <S.Volume
-        onClick={() => {
-          setMuted(state => !state);
-        }}
-      >
-        {muted ? (
-          <img src={volumeOff} alt="Volume is Off" />
-        ) : (
-          <img src={volumeOn} alt="Volume is ON" />
-        )}
-      </S.Volume>
       <S.Star />
     </S.Container>
   );

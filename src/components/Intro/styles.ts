@@ -35,7 +35,11 @@ export const Star = styled.div`
     width: 2px;
     height: 2px;
     background: transparent;
-    box-shadow: 100px 122px #ffff, 300px 756px #ffff;
+    box-shadow: 100px 122px #ffff, 300px 756px #ffff, 1480px 490px #ffff,
+      800px 190px #ffff, 168px 920px #ffff, 1293px 263px #ffff,
+      360px 290px #ffff, 1305px 80px #ffff, 680px 56px #ffff, 411px 71px #ffff,
+      241px 364px #ffff, 1425px 758px #ffff, 1296px 236px #ffff,
+      1321px 741px #ffff;
     z-index: 6;
   }
 `;
@@ -70,7 +74,7 @@ export const Crawl = styled.section`
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%) perspective(300px) rotateX(28deg);
+  transform: translateX(-50%) perspective(500px) rotateX(28deg);
   transform-origin: 50% 100%;
 `;
 
@@ -100,18 +104,4 @@ export const EpisodeTitle = styled.h2`
   margin-bottom: 7rem;
   transform: scale(1, 1.5);
   text-align: center;
-`;
-
-export const Volume = styled.button`
-  background: transparent;
-  outline: none;
-  border: 0;
-  position: absolute;
-  top: 2.8rem;
-  left: 1.8rem;
-  z-index: 50;
-
-  img {
-    height: 2rem;
-  }
 `;

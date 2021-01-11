@@ -7,7 +7,7 @@ const App: React.FC = () => {
   return (
     <>
       <GlobalStyles />
-      <Intro text="A long time ago, in a galaxy far, far away..." />
+      <Intro text="A não pouco tempo, em uma galáxia muito perto..." />
     </>
   );
 };
