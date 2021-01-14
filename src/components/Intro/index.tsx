@@ -79,14 +79,14 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
           <p>
             Durante oito anos no planeta Rad Informática, o analista de sistemas
             teve muitas consquistas pessoais e profissionais, foram muitos
-            desafios, e a meta superada a sua patente e reconhecimento na equipe
-            crescia em rítmo acelerado.
+            desafios e a cada meta superada seu reconhecimento na equipe crescia
+            em rítmo acelerado.
           </p>
           <p>
-            Foi analista de suporte, analista de implantação, homologador, e
-            estava atuando como desenvolvedor de relatórios gerencias, seu
-            desejo por conhecimento e aperfeiçoamento estava aumentando a cada
-            dia.
+            Começou como analista de suporte, analista de implantação,
+            homologador e logo conseguiu o cargo de desenvolvedor de relatórios
+            gerencias, seu desejo por conhecimento e aperfeiçoamento estava
+            aumentando a cada dia.
           </p>
           <p>
             Mas o destino fez a vida do desenvolvedor mudar de direção, no ano
@@ -96,13 +96,13 @@ const Intro: React.FC<IntroPros> = ({ text }) => {
           </p>
           <p>
             Com o objetivo de realocar nesses planetas o desenvolvedor resolveu
-            aprender uma nova linguagem o JavaScript, e descobriu algo incrível.
+            aprender uma nova linguagem, o JavaScript e descobriu algo incrível.
           </p>
           <p>
-            Nasce uma paixão por desenvolvimento de interfaces, agora ele estuda
-            tudo sobre essa área. E nessa nova jornada o analista agora
-            desenvolvedor de relatórios, busca uma oportunidade de começar uma
-            nova carreia como Desenvolvedor Front-End.
+            Nasceu uma paixão por desenvolvimento de interfaces, agora ele
+            estuda tudo sobre essa área. E nessa nova jornada o analista de
+            sistemas e desenvolvedor de relatórios, busca uma nova oportunidade
+            de começar uma carreira como Desenvolvedor Front-End.
           </p>
         </S.CrawlContent>
       </S.Crawl>
